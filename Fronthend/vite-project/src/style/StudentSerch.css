@@ -1,0 +1,86 @@
+/* StudentSerch component styles */
+.student-search {
+	max-width: 720px;
+	margin: 18px auto;
+	padding: 20px;
+	background: rgba(255,255,255,0.9);
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+}
+
+.student-search-title {
+	margin: 0 0 12px 0;
+	font-size: 1.4rem;
+	color: #0f172a;
+}
+
+.student-search-controls {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.student-search-input {
+	flex: 1 1 auto;
+	padding: 10px 12px;
+	border-radius: 8px;
+	border: 1px solid rgba(99,102,241,0.12);
+	background: #fff;
+	font-size: 1rem;
+	color: #0b1220;
+	caret-color: #0b1220;
+}
+
+.student-search-input::placeholder {
+	color: rgba(11,18,32,0.45);
+}
+
+.student-search-button {
+	padding: 10px 14px;
+	background: #2563eb;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.student-search-button:hover {
+	background: #1e40af;
+}
+
+.student-search-error {
+	color: #b91c1c;
+	margin: 8px 0 0 0;
+}
+
+.student-search-result {
+	margin-top: 14px;
+	padding: 12px;
+	border-radius: 10px;
+	background: linear-gradient(180deg, rgba(248,250,252,0.9), rgba(255,255,255,0.85));
+	border: 1px solid rgba(148,163,184,0.12);
+}
+
+.student-search-name {
+	margin: 0 0 8px 0;
+	font-size: 1.1rem;
+	color: #0b1220;
+}
+
+.student-search-details {
+	display: flex;
+	gap: 18px;
+	color: #334155;
+}
+
+@media (max-width: 560px) {
+	.student-search-controls {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.student-search-button { width: 100%; }
+	.student-search-details { flex-direction: column; gap: 8px; }
+}
+

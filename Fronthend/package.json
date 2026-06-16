@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix vite-project run dev",
+    "build": "npm --prefix vite-project run build",
+    "lint": "npm --prefix vite-project run lint",
+    "preview": "npm --prefix vite-project run preview"
+  },
+  "dependencies": {
+    "axios": "^1.16.1"
+  }
+}
