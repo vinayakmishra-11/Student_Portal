@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import '../style/AddStudent.css';
 
 function AddStudent () {
 
@@ -26,33 +27,41 @@ function AddStudent () {
         .catch((error)=>{
             console.log(error)
         })
-        return (
-            <div>
-                <h2>Add Student</h2>
-                <input
-                    type="text"
-                    placeholder="Name"
-                    value={name}
-                    onChange={(e)=>setName(e.target.value)}
-                />
-                <br></br>
-                <input
-                    type="number"
-                    placeholder="age"
-                    value={name}
-                    onChange={(e)=>setAge(e.target.value)}
-                />
-                <br></br>
-
-                <input
-                    type="text"
-                    placeholder="Course"
-                    value={course}
-                    onChange={(e)=>setCourse(e.target.value)}
-                />
-                <br></br>
-                    
-            </div>
-        )
     }
+
+    return (
+        <section className="add-student">
+            <div className="add-student__card">
+            <h2 className="add-student__title">Add Student</h2>
+            <p className="add-student__subtitle">Create a new student record and save it to the database.</p>
+            <div className="add-student__form">
+            <input
+                className="add-student__input"
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
+            />
+            <input
+                className="add-student__input"
+                type="number"
+                placeholder="Age"
+                value={age}
+                onChange={(e)=>setAge(e.target.value)}
+            />
+
+            <input
+                className="add-student__input"
+                type="text"
+                placeholder="Course"
+                value={course}
+                onChange={(e)=>setCourse(e.target.value)}
+            />
+            <button className="add-student__button" onClick={addStudent}>Add Student</button>
+            </div>
+            </div>
+        </section>
+    );
 }
+
+export default AddStudent;
