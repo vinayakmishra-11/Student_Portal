@@ -1,7 +1,11 @@
 import AddStudent from "../Components/AddStudent";
-
 function AddStudentPage() {
-    return <AddStudent />;
+    return (
+    <>
+    <AddStudent />
+    </>
+
+);
 }
 
 export default AddStudentPage;

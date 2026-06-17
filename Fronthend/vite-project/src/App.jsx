@@ -12,8 +12,10 @@ function App(){
      
     
       <BrowserRouter>
+      {/* <Navbar/> */}
+       <Navbar/>
       <Routes>
-
+      
         <Route path="/" element={<Home/>}/>
           <Route
           path="/add-student"
@@ -25,6 +27,7 @@ function App(){
           element={<StudentSerch  />}
         />
       </Routes>
+             
     
     </BrowserRouter>
     </div>
