@@ -5,12 +5,12 @@ import StudentSerch from "./Pages/StudentSerch";
 import Navbar from "./Components/NavBar";
 
 function App(){
-
+   
   return (
     
     <div>
      
-    
+       
       <BrowserRouter>
       {/* <Navbar/> */}
        <Navbar/>
