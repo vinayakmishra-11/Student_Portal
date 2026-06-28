@@ -16,7 +16,6 @@ function AddStudent() {
         course: course,
       })
       .then((response) => {
-        alert("Student Addes Sccesfully");
         setName("");
         setAge("");
         setCourse("");
