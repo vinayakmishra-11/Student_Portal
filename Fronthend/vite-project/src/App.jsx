@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import AddStudent from "./Pages/AddStudent";
 import StudentSerch from "./Pages/StudentSerch";
+import UpdateStudent from "./Pages/UpdateStudent";
 import Navbar from "./Components/NavBar";
 
 function App() {
