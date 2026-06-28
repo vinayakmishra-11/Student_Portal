@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import "../style/AddStudent.css";
-
+import { useNavigate, useParams } from "react-router-dom";
 function AddStudent() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [course, setCourse] = useState("");
   const [error, setErrorMessage] = useState("");
-
+  const navigate = useNavigate();
   const addStudent = () => {
     axios
       .post("http://127.0.0.1:8000/students", {
@@ -21,6 +21,7 @@ function AddStudent() {
         setAge("");
         setCourse("");
         console.log(response.data);
+        navigate("/");
       })
       .catch((error) => {
         if (error.response) {
