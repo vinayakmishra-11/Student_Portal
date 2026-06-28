@@ -15,7 +15,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/add-student" element={<AddStudent />} />
           <Route path="/edit-student/:id" element={<UpdateStudent />} />
-
           <Route path="/search-student" element={<StudentSerch />} />
         </Routes>
       </BrowserRouter>
