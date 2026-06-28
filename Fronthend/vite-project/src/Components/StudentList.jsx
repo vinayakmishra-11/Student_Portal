@@ -2,10 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
 import { FaTrash , FaEdit } from "react-icons/fa";
+import { useNavigate, useParams } from "react-router-dom";
 import "../style/StudentList.css";
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 function StudentList() {
+  const navigate = useNavigate();
   const [student, setStudent] = useState([]);
 
   useEffect(() => {
@@ -64,7 +66,7 @@ function StudentList() {
                   }}
                 />
                 < FaEdit onClick={()=>{
-                  console.log("Edit student Button clicked")
+                  navigate(`/edit-student/${student.id}`)
                 }}/>
               </ListGroup.Item>
             </ListGroup>
