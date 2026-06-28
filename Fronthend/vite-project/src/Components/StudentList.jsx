@@ -63,6 +63,9 @@ function StudentList() {
                     deleteStudent(student.id);
                   }}
                 />
+                < FaEdit onClick={()=>{
+                  console.log("Edit student Button clicked")
+                }}/>
               </ListGroup.Item>
             </ListGroup>
           ))}
