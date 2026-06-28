@@ -47,7 +47,11 @@ def get_students():
 
     db: Session = SessionLocal()
 
-    students = db.query(Student).all()
+    students = (
+        db.query(Student)
+        .order_by(Student.id)
+        .all()
+    )
 
     return students
 
