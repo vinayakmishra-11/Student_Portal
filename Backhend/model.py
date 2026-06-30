@@ -13,3 +13,4 @@ class Student(Base):
     age = Column(Integer)
 
     course = Column(String)
+
