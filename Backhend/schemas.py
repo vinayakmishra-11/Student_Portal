@@ -1,4 +1,4 @@
-from pydantic import BaseModel , field_validator
+from pydantic import BaseModel , field_validator , EmailStr
 from typing import Optional
 
 
@@ -27,3 +27,9 @@ class StudentUpdate(BaseModel):
     name: Optional[str] = None
     age: Optional[int] = None
     course: Optional[str] = None
+
+
+class UserCreate(BaseModel):
+    username :str
+    email : EmailStr
+    password : str
