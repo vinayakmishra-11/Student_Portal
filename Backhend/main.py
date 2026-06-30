@@ -4,9 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from Database import engine, SessionLocal
 from model import Base, Student
 
-from schemas import StudentCreate,StudentUpdate
+from schemas import StudentCreate,StudentUpdate ,UserCreate
 
-
+from Usermodel import User
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
@@ -99,4 +99,30 @@ def specific_student(student_id:int):
         raise HTTPException(status_code=404, detail='No Such Student exist')
     return  student
         
+@app.post('/signup')
+def signup(user:UserCreate):
     
+    db:Session = SessionLocal()
+
+    existing_user = db.query(User).filter(
+        User.email==user.email
+    ).first()
+
+    if existing_user:
+        return{
+            "Message":"Email Already Exist"
+        }
+    new_user=User(
+        username=user.username,
+        email=user.email,
+        password = user.password
+
+    )
+
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+
+    return{
+        "Message":"New User Added"
+    }
