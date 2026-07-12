@@ -109,9 +109,11 @@ def signup(user:UserCreate):
     ).first()
 
     if existing_user:
-        return{
-            "Message":"Email Already Exist"
-        }
+        raise HTTPException(
+            status_code=400,
+            detail="Email Alreday Exist"
+        )
+        
     new_user=User(
         username=user.username,
         email=user.email,
