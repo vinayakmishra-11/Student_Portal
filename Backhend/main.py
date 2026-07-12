@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from Database import engine, SessionLocal
 from model import Base, Student
 
-from schemas import StudentCreate,StudentUpdate ,UserCreate
+from schemas import StudentCreate,StudentUpdate ,UserCreate , UserLogin
 
 from Usermodel import User
 app = FastAPI()
@@ -125,4 +125,29 @@ def signup(user:UserCreate):
 
     return{
         "Message":"New User Added"
+    }
+
+@app.post('/login')
+def login(user:UserLogin):
+
+    db : Session = SessionLocal()
+
+    existing_user = db.query(User).filter(
+        User.email==user.email
+    ).first()
+
+    if not existing_user:
+        raise HTTPException(
+            status_code=404,
+            detail="User not Found"
+        )
+    
+    if existing_user.password!=user.password:
+        raise HTTPException(
+            status_code=401,
+            detail="Incoreect Password"
+        )
+    
+    return {
+        "Message" : "Login Succesful"
     }
